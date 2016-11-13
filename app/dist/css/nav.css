@@ -1,0 +1,57 @@
+/*  button settings */
+.insertZtreeNode {
+  width: 80px;
+  height: 40px;
+  border: 1px #000 solid;
+}
+
+.space2 {
+  padding-left: 24px;
+}
+
+.nav-box {
+  float: left;
+  height: 100%;
+  background-color: #354052;
+}
+
+.nav {
+  width: 80px;
+  height: 64px;
+  text-align: center;
+}
+.nav a {
+  display: block;
+  color: #aeb1b6;
+  width: 80px;
+  height: 64px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Microsoft YaHei";
+}
+.nav a .icon {
+  color: #aeb1b6;
+}
+.nav a a:hover {
+  color: #aeb1b6;
+}
+.nav:hover {
+  background-color: #2a3342;
+}
+.nav:hover .icon {
+  color: #fff;
+}
+.nav:hover a:hover {
+  color: #fff;
+}
+
+.icon-nav {
+  font-size: 26px;
+  padding: 8px 10px 3px;
+}
+
+.nav-active a {
+  background-color: #2a3342;
+  color: #fff;
+}

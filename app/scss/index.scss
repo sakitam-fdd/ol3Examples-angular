@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+/*input, textarea {
+    border: 1px solid #c8c8c8 !important;
+    padding: 0 5px !important;
+    background: #fff !important;
+}*/
+
+input[type="text"], select, textarea {
+  &:focus {
+    border-color: #0aa2b9 !important;
+    box-shadow: 0 0 10px #0aa2b9;
+  }
+}
+
+select {
+  background: #fff;
+}
+
+textarea {
+  color: #2d2d2d !important;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+.vertical-align-top {
+  vertical-align: top;
+  display: inline-block;
+}
+
+[ng-cloak] {
+  display: none;
+}
+
+.ng-enter {
+  z-index: 8888;
+}
+
+.ng-leave {
+  z-index: 9999;
+}
+
+.ng-enter {
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: rotatePullTop .5s both ease;
+  animation: rotatePullTop .5s both ease;
+}
+
+.ng-leave {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation: rotatePushBottom .8s both ease;
+  animation: rotatePushBottom .8s both ease;
+}
+
+
+.before-gray:before {
+  color: #aeaeae;
+}
+
+.before-blue:before {
+  color: #388ce3;
+}
+
+/* scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  outline: none;
+  border: 1px solid #999;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f3f3f3;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #018EE8;
+  border-color: #018EE8;
+}

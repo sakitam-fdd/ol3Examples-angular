@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" name="viewport">
+  <title>地图API展示系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <link rel="shortcut icon" href="images/logo.png">
+  <!-- fonticon -->
+  <link rel="stylesheet" type="text/css" href="dist/css/fonticon/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="dist/css/min/main.min.css">
+  <link rel="stylesheet" href="public/bootstarp/css/bootstrap.css">
+  <link rel="stylesheet" href="dist/css/ngdialog/ngDialog.css">
+  <link rel="stylesheet" href="dist/css/ngdialog/ngDialog-theme-default.css">
+  <link rel="stylesheet" href="dist/css/ngdialog/ngDialog-custom-width.css">
+  <link rel="stylesheet" href="dist/css/ngdialog/ngDialog-theme-plain.css">
+  <script src="public/su.js"></script>
+  <script src="public/require.js" data-main="scripts/app" defer async="true"></script>
+  <script src="public/bootstarp/js/bootstrap.js"></script>
+</head>
+<body>
+<div id="app" style="width: 100%; height: 100%;overflow: hidden">
+  <!-- 页头 -->
+  <div ui-view="header"></div>
+  <!--工作区-->
+  <div class="workPlace" style="position:absolute;width: 100%; top: 66px;bottom: 30px">
+    <div ui-view="nav" class="nav-box"></div>
+    <div ui-view="main" style="height: 100%;float: left" id="main"></div>
+  </div>
+  <!--尾部-->
+  <div ui-view="footer"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/*  button settings */
+.insertZtreeNode {
+  width: 80px;
+  height: 40px;
+  border: 1px #000 solid;
+}
+
+.space2 {
+  padding-left: 24px;
+}

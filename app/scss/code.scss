@@ -1,0 +1,23 @@
+.jscode{
+  .button_my{
+    position: absolute;
+    bottom:20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .i-button{
+    padding: 5px;
+    width: 78px;
+    border: 1px solid #0aa2b9;
+    background: #0aa2b9;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    transition: color .3s ease-in-out,background-color .3s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      color: #0aa2b9;
+      background-color: #ffffff;
+    }
+  }
+}

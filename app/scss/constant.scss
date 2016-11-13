@@ -1,0 +1,92 @@
+$fontStack-SimHei: 'SimHei ';
+$fontStack-Microsoft: 'Microsoft YaHei';
+$fontStack-NSimSun: 'NSimSun';
+$fontStack-SimSun: 'SimSun';
+$fontStack-FangSong: 'FangSong';
+$fontStack-KaiTi: 'KaiTi';
+
+$index-top-height: 66px;
+$index-top-bgcolor: #0aa2b9;
+$hover-fontcolor: #0aa2b9;
+$index-top-fontsize: 20px;
+
+$index-nav-width: 80px;
+$index-nav-height: 64px;
+$index-nav-background: #354052;
+$index-nav-fontsize: 13px;
+$index-header-nav-color: #fff;
+$index-nav-color: #aeb1b6;
+$index-nav-hoverBgcolor: #2a3342;
+$index-nav-fonticon: 26px;
+
+$index-center-left-width: 290px;
+
+$select-width: 184px;
+$select-height: 24px;
+
+/*  button settings */
+$btn-width: 68px;
+$btn-height: 28px;
+
+@mixin constant-attr($width,$height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin btn($width,$height,$color,$bgcolor,$borderColor) {
+    width: $width;
+    height: $height;
+    cursor: pointer;
+    color: $color;
+    border-radius: 4px;
+    background-color: $bgcolor;
+    border: 1px solid $borderColor;
+}
+
+.insertZtreeNode {
+    width: 80px;
+    height: 40px;
+    border: 1px #000 solid;
+}
+
+//ul li {
+//    cursor: pointer;
+//    &:hover {
+//        color: $hover-fontcolor;
+//    }
+//}
+
+@mixin box-shadow() {
+    -webkit-box-shadow: 1px 1px 3px #c8c6c7;
+    -moz-box-shadow: 1px 1px 3px #c8c6c7;
+    box-shadow: 1px 1px 3px #c8c6c7;
+}
+
+@mixin border-radius() {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+@mixin constant-select() {
+    border: 1px solid #d6d6d6;
+    width: $select-width;
+    height: $select-height;
+}
+
+@mixin center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.space2 {
+    padding-left: 24px;
+}
+
+.space3 {
+
+}

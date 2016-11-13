@@ -1,0 +1,15 @@
+<div ng-controller="headerCtrl" class="header">
+        <div class="main-layout-top-logo-content-left">
+           	<div class="zhcx_xt mapApi_xt subSys_xt">
+           		<span style="font-size: 20px;font-family: '黑体';color:#ffffff;letter-spacing:0px;">{{_Title}}</span>
+           	</div>
+        </div>
+        <div class="main-layout-top-logo-content-right" ng-init="init()" >
+			<div class="main-layout-top-logo-content-right-item" ng-repeat="header in headerObj"
+				 ng-class="{true: 'main-layout-top-logo-content-right-item-selected', false: ''}[isModel == header.alias]" ng-click="changeModel(header);" >
+				<div class="icon iconfont icon-{{header.icon}}" ></div>
+				<div class="icon-title" title="{{header.title}}">{{header.subTitle}}</div>
+			</div>
+        </div>
+</div>
+

@@ -1,0 +1,49 @@
+<div class="jscode" ng-init="code.init()" style="height: 100%;">
+  <div class="code">
+    <pre>
+      {{textCode}}
+      this.addCode = function (feature, params, isclear) {
+                if (isclear) {
+                    this.clearGraphics();
+                }
+                if (!feature) {
+                    return;
+                }
+                var layer = null;
+                if (params.layerName) {
+                    params["create"] = true;
+                    layer = this.getTempVectorLayer(params.layerName, params);
+                } else {
+                    var layer = this.tempVectorLayer;
+                }
+                var Polygonstyle = new ol.style.Style({
+                    fill: new ol.style.Fill({
+                        color: 'rgba(255, 255, 255, 0)'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: '#4781d9',
+                        width: 2
+                    }),
+                    image: new ol.style.Circle({
+                        radius: 7,
+                        fill: new ol.style.Fill({
+                            color: '#ffcc33'
+                        })
+                    })
+                });
+                var geometry = new ol.format.WKT().readGeometry(feature.geometry);
+                var Polygonfeature = new ol.Feature({
+                    geometry: geometry
+                });
+                Polygonfeature.setStyle(Polygonstyle);
+                layer.getSource().addFeature(Polygonfeature);
+                var extent = geometry.getExtent();
+                this.zoomToExtent(extent, true);
+            }
+    </pre>
+  </div>
+  <div class="button_my">
+    <button class="i-button" ng-click="code.showEvent()">确定</button>
+    <button class="i-button" ng-click="code.quxiao()">取消</button>
+  </div>
+</div>

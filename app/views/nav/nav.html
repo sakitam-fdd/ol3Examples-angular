@@ -1,0 +1,5 @@
+<div ng-controller="navCtrl" ng-init="init()">
+    <div ng-repeat="nav in data" class="nav" ng-class="{true: 'nav-active', false: ''}[navSelect == nav.alias]">
+        <a ng-click="changeNav(nav)" title="{{nav.title}}"><div class="icon-nav iconfont icon-{{nav.icon}}"></div><div>{{nav.title}}</div></a>
+    </div>
+</div>

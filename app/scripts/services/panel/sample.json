@@ -1,0 +1,30 @@
+[
+  {
+    "name":"简单标点",
+    "type":"addPoint"
+  },
+  {
+    "name":"点自定义样式",
+    "type":"userPoint"
+  },
+  {
+    "name":"多点标绘",
+    "type":"addPoints"
+  },
+  {
+    "name":"简单标线",
+    "type":"addPline"
+  },
+  {
+    "name":"线自定义样式",
+    "type":"userLine"
+  },
+  {
+    "name":"多线标绘",
+    "type":"addPlines"
+  },
+  {
+    "name":"标面",
+    "type":"addPlonyer"
+  }
+]

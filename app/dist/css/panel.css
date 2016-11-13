@@ -1,0 +1,25 @@
+.panel {
+  width: 230px;
+  height: 100%;
+  float: left;
+  box-shadow: 0 0 5px #ccc;
+  overflow: hidden;
+}
+.panel .my-button {
+  float: left;
+  margin: 10px 10px 0 10px;
+}
+.panel .i-button {
+  padding: 5px;
+  border: 1px solid #0aa2b9;
+  background: #0aa2b9;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  transition: color .3s ease-in-out,background-color .3s ease-in-out;
+}
+.panel .i-button:hover {
+  cursor: pointer;
+  color: #0aa2b9;
+  background-color: #ffffff;
+}

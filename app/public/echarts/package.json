@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      "echarts",
+      "/Users/dark/Documents/workspace/jxgisnew/jxgis-web/src/main/webapp"
+    ]
+  ],
+  "_cnpm_publish_time": 1467631733031,
+  "_from": "echarts@latest",
+  "_id": "echarts@3.2.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/echarts",
+  "_nodeVersion": "6.2.2",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/echarts-3.2.1.tgz_1467631732535_0.5836196839809418"
+  },
+  "_npmUser": {
+    "email": "ecomfe@gmail.com",
+    "name": "ecomfe"
+  },
+  "_npmVersion": "3.9.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "echarts",
+    "raw": "echarts",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/echarts/download/echarts-3.2.1.tgz",
+  "_shasum": "d354a0ff4e710cba8aa1384df8a092eab58e2b36",
+  "_shrinkwrap": null,
+  "_spec": "echarts",
+  "_where": "/Users/dark/Documents/workspace/jxgisnew/jxgis-web/src/main/webapp",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ecomfe/echarts/issues"
+  },
+  "contributors": [
+    {
+      "email": "errorrik@gmail.com",
+      "name": "erik"
+    }
+  ],
+  "dependencies": {
+    "zrender": "^3.1.1"
+  },
+  "description": "A powerful charting and visualization library for browser",
+  "devDependencies": {
+    "coordtransform": "^2.0.2",
+    "escodegen": "^1.8.0",
+    "esprima": "^2.7.2",
+    "estraverse": "^4.1.1",
+    "fs-extra": "^0.26.5",
+    "glob": "^7.0.0",
+    "webpack": "^1.12.13",
+    "zrender": "^3.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "d354a0ff4e710cba8aa1384df8a092eab58e2b36",
+    "size": 3896920,
+    "tarball": "http://registry.npm.taobao.org/echarts/download/echarts-3.2.1.tgz"
+  },
+  "gitHead": "17da8048717be39112f7088f5234b63fcfdb2bba",
+  "homepage": "http://echarts.baidu.com/",
+  "keywords": [
+    "visualization",
+    "canvas"
+  ],
+  "maintainers": [
+    {
+      "email": "ecomfe@gmail.com",
+      "name": "ecomfe"
+    }
+  ],
+  "name": "echarts",
+  "optionalDependencies": {},
+  "publish_time": 1467631733031,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecomfe/echarts.git"
+  },
+  "scripts": {
+    "prepublish": "node build/amd2common.js"
+  },
+  "version": "3.2.1"
+}
