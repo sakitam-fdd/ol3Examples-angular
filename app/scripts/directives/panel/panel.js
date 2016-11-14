@@ -23,6 +23,7 @@ define(['index','panelService','ngDialog'],
            * @param item
            */
           $scope.showCode = function (item) {
+            $scope.obj = item;
             ngDialog.open({
               template: 'views/showCode/showCode.html',
               className: 'ngdialog-theme-plain',

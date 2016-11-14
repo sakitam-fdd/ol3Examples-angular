@@ -1,5 +1,5 @@
-<div class="panel" ng-init="init()">
+<div class="toolpanel" ng-init="init()">
   <div ng-repeat="item in data" class="my-button">
-    <button class="i-button" ng-click="showCode()">{{item.name}}</button>
+    <button class="i-button" ng-click="showCode(item)">{{item.name}}</button>
   </div>
 </div>

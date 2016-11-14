@@ -18,6 +18,7 @@ require.config({
     'autocomplete': '../public/jquery.autocomplete.min',
     'moment': '../public/moment',
     'momentzh': '../public/zh-cn',
+    'bootstrap':'../public/bootstarp/js/bootstrap.min',
     'index': 'index',
 
     //map
@@ -55,7 +56,9 @@ require.config({
   },
   deps:['index'],
   shim: {
+    'bootstrap':['jquery'],
     "angular": {
+      deps:['bootstrap'],
       exports: "angular"
     },
     'angularAMD': ['angular'],

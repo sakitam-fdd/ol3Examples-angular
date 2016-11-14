@@ -9,7 +9,9 @@ define(['index','ngDialog','config','jscodeService'],
         restrict: 'EA',
         replace: true,
         transclude: false,
-        scope: false,
+        scope: {
+          obj:'='
+        },
         templateUrl: 'tpl/jscode.html',
         controller: function ($scope,$state, $rootScope) {
           $scope.code = {
@@ -24,12 +26,10 @@ define(['index','ngDialog','config','jscodeService'],
             $scope.textCode = ''
           }
           function showEventFunc() {
-            var item = {
-              name:"南昌市",
-              xzqhbm:"360100"
-            }
+            console.log($scope.obj);
+            ngDialog.close();
             var tableName = "GIS_City";
-            var where = "CODE" + "='" + item.xzqhbm.toString() + "'";
+            var where = "CODE" + "='" + $scope.obj.xzqhbm.toString() + "'";
             jscodeService.loadGeometryData(tableName,where).then(function (data) {
               config.hdmap.addCode(data['features'][0],{
                 layerName: "区划"
@@ -37,7 +37,7 @@ define(['index','ngDialog','config','jscodeService'],
             });
           }
           function quxiaoFunc() {
-            
+            ngDialog.close();
           }
         },
         link: function ($scope) {
