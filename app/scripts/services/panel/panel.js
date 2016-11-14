@@ -12,6 +12,9 @@ define(['index'], function(index) {
             url: 'scripts/services/panel/' + type + '.json',
             method: 'GET'
           }).success(function (data, status, headers) {
+            if (data.length == 0){
+              
+            }
             deferred.resolve(data);
           })
             .error(function (data, status, headers) {

@@ -2,8 +2,8 @@
  * Created by FDD on 2016/11/13.
  */
 'use strict';
-define(['index','panelService','ngDialog'],
-  function (index,panelService,ngDialog) {
+define(['index','broadcastNameEnum','panelService','ngDialog'],
+  function (index,broadcastNameEnum,panelService,ngDialog) {
     index.directive('panel', ['panelService','ngDialog',function (panelService,ngDialog) {
       return {
         restrict: 'EA',
@@ -13,11 +13,17 @@ define(['index','panelService','ngDialog'],
         templateUrl: 'tpl/panel.html',
         controller: function ($scope,$state, $rootScope) {
           $scope.init = function () {
-            var type = "c";
-            panelService.loadPanelData(type).then(function (data) {
+            init_($rootScope.navSelect);
+          };
+          $scope.$on(broadcastNameEnum.navListen,function (ev,item) {
+            init_(item);
+          });
+
+          function init_(item) {
+            panelService.loadPanelData(item).then(function (data) {
               $scope.data = data;
             })
-          };
+          }
           /**
            * 显示代码面板
            * @param item

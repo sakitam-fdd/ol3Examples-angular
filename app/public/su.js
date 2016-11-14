@@ -221,3 +221,43 @@ Sui.prototype.ztree = {
         }
     }
 };
+
+Sui.prototype.noData = {
+    /*
+     *  暂无数据模板
+     */
+    noDatas: function (title, imgName, val, btnVal, fun) {
+        var html = '<div class="zhezhao"></div>' +
+          '<div class="nodata">' +
+          '<p class="nodata-head">' +
+          '<span class="sp1" title=' + title + '>' + title + '</span>' +
+          '<span class="iconfont icon-guanbi"></span>' +
+          '</p>' +
+          '<div class="nodata-wrap">' +
+          '<div class="nodata-wrap-s">' +
+          '<div class="nodata-img">' +
+          '<img src="dist/css/images/' + imgName + '.png" alt="">' +
+          '</div>' +
+          '<div class="nodat-val">' +
+          '<div>' + val + '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div class="nodata-wrap-b">' +
+          '<button class="btn" type="button">' + btnVal + '</button>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+        $(html).appendTo('body');
+        $(".icon-guanbi").click(function () {
+            $(".nodata,.zhezhao").remove()
+        });
+        $(".btn").click(function () {
+              if (fun) {
+                  fun();
+              } else {
+                  $(".nodata,.zhezhao").remove()
+              }
+          }
+        )
+    }
+}

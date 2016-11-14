@@ -36,7 +36,7 @@ define(['index'], function(index) {
         } catch (error) {
 
         }
-      },
+      }
     };
     return service;
   }]);

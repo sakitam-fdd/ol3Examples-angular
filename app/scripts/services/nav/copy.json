@@ -1,0 +1,14 @@
+[
+  {
+    "icon": "quxianjifuwu",
+    "title": "军事标绘",
+    "alias":"plot",
+    "type":"plot"
+  },
+  {
+    "icon": "changyongfuwu",
+    "title": "常用服务",
+    "alias":"cyfw",
+    "type":"gg"
+  }
+]

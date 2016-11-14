@@ -1,20 +1,8 @@
 [
   {
     "icon": "gongluzhuanti",
-    "title": "简单标绘",
+    "title": "区域定位",
     "alias":"sample",
-    "type":"project"
-  },
-  {
-    "icon": "quxianjifuwu",
-    "title": "军事标绘",
-    "alias":"plot",
-    "type":"project"
-  },
-  {
-    "icon": "changyongfuwu",
-    "title": "常用服务",
-    "alias":"cyfw",
-    "type":"project"
+    "type":"c"
   }
 ]

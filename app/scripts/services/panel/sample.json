@@ -1,30 +1,79 @@
 [
   {
-    "name":"简单标点",
-    "type":"addPoint"
+    "iconCls": "icon-none",
+    "id": "360100",
+    "parent": "360000",
+    "state": "closed",
+    "text": "南昌市"
   },
   {
-    "name":"点自定义样式",
-    "type":"userPoint"
+    "iconCls": "icon-none",
+    "id": "361100",
+    "parent": "360000",
+    "state": "closed",
+    "text": "上饶市"
   },
   {
-    "name":"多点标绘",
-    "type":"addPoints"
+    "iconCls": "icon-none",
+    "id": "361000",
+    "parent": "360000",
+    "state": "closed",
+    "text": "抚州市"
   },
   {
-    "name":"简单标线",
-    "type":"addPline"
+    "iconCls": "icon-none",
+    "id": "360900",
+    "parent": "360000",
+    "state": "closed",
+    "text": "宜春市"
   },
   {
-    "name":"线自定义样式",
-    "type":"userLine"
+    "iconCls": "icon-none",
+    "id": "360800",
+    "parent": "360000",
+    "state": "closed",
+    "text": "吉安市"
   },
   {
-    "name":"多线标绘",
-    "type":"addPlines"
+    "iconCls": "icon-none",
+    "id": "360700",
+    "parent": "360000",
+    "state": "closed",
+    "text": "赣州市"
   },
   {
-    "name":"标面",
-    "type":"addPlonyer"
+    "iconCls": "icon-none",
+    "id": "360600",
+    "parent": "360000",
+    "state": "closed",
+    "text": "鹰潭市"
+  },
+  {
+    "iconCls": "icon-none",
+    "id": "360500",
+    "parent": "360000",
+    "state": "closed",
+    "text": "新余市"
+  },
+  {
+    "iconCls": "icon-none",
+    "id": "360400",
+    "parent": "360000",
+    "state": "closed",
+    "text": "九江市"
+  },
+  {
+    "iconCls": "icon-none",
+    "id": "360300",
+    "parent": "360000",
+    "state": "closed",
+    "text": "萍乡市"
+  },
+  {
+    "iconCls": "icon-none",
+    "id": "360200",
+    "parent": "360000",
+    "state": "closed",
+    "text": "景德镇市"
   }
 ]

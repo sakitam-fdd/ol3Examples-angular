@@ -29,7 +29,7 @@ define(['index','ngDialog','config','jscodeService'],
             console.log($scope.obj);
             ngDialog.close();
             var tableName = "GIS_City";
-            var where = "CODE" + "='" + $scope.obj.xzqhbm.toString() + "'";
+            var where = "CODE" + "='" + $scope.obj.id.toString() + "'";
             jscodeService.loadGeometryData(tableName,where).then(function (data) {
               config.hdmap.addCode(data['features'][0],{
                 layerName: "区划"

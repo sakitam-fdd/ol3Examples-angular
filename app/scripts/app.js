@@ -34,6 +34,7 @@ require.config({
     //config
     'config':'config/config', //配置文件
     'util':'map/util',
+    'broadcastNameEnum': '../broadcastEnum/broadcastEnum',
 
     // cotrollers
     'indexCtrl':'controllers/indexCtrl',
