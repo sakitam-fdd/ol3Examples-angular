@@ -8,7 +8,7 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
         window.ol = ol;
         var app = {};
         var drawSketchObj;
-        app.Drag = function () {//地图手势交互
+        /*app.Drag = function () {//地图手势交互
             ol.interaction.Pointer.call(this, {
                 handleDownEvent: app.Drag.prototype.handleDownEvent,
                 handleDragEvent: app.Drag.prototype.handleDragEvent,
@@ -16,39 +16,39 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
                 handleUpEvent: app.Drag.prototype.handleUpEvent
             });
             this.customType = "appDrag";
-            /**
+            /!**
              * @type {ol.Pixel}
              * @private
-             */
+             *!/
             this.coordinate_ = null;
 
-            /**
+            /!**
              * @type {string|undefined}
              * @private
-             */
+             *!/
             this.cursor_ = 'pointer';
 
-            /**
+            /!**
              * @type {ol.Feature}
              * @private
-             */
+             *!/
             this.feature_ = null;
 
-            /**
+            /!**
              * @type {string|undefined}
              * @private
-             */
+             *!/
             this.previousCursor_ = undefined;
 
         };
         ol.inherits(app.Drag, ol.interaction.Pointer);//继承的原型方法构造函数（child,parent）
 
-        /**
+        /!**
          * @param {ol.MapBrowserEvent} evt Map browser event.
          * @return {boolean} `true` to start the drag sequence.
-         */
+         *!/
         app.Drag.prototype.handleDownEvent = function (evt) {
-            if (evt.originalEvent.button === 0/*鼠标左键*/) {
+            if (evt.originalEvent.button === 0/!*鼠标左键*!/) {
                 var map = evt.map;
                 var feature = map.forEachFeatureAtPixel(evt.pixel,
                     function (feature) {
@@ -62,16 +62,16 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
             }
         };
 
-        /**
+        /!**
          * @param {ol.MapBrowserEvent} evt Map browser event.
-         */
+         *!/
         app.Drag.prototype.handleDragEvent = function (evt) {
             if (!this.coordinate_) {
                 return;
             }
             var deltaX = evt.coordinate[0] - this.coordinate_[0];
             var deltaY = evt.coordinate[1] - this.coordinate_[1];
-            var geometry = /** @type {ol.geom.SimpleGeometry} */
+            var geometry = /!** @type {ol.geom.SimpleGeometry} *!/
                 (this.feature_.getGeometry());
             geometry.translate(deltaX, deltaY);
             this.coordinate_[0] = evt.coordinate[0];
@@ -79,9 +79,9 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
             this.feature_.dispatchEvent("featureMove");
         };
 
-        /**
+        /!**
          * @param {ol.MapBrowserEvent} evt Event.
-         */
+         *!/
         app.Drag.prototype.handleMoveEvent = function (evt) {
             if (this.cursor_) {
                 var map = evt.map;
@@ -108,15 +108,15 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
             }
         };
 
-        /**
+        /!**
          * @return {boolean} `false` to stop the drag sequence(拖拽顺序).
-         */
+         *!/
         app.Drag.prototype.handleUpEvent = function (evt) {
             window.testdrag = false;
             this.coordinate_ = null;
             this.feature_ = null;
             return false;
-        };
+        };*/
         /*
          * 定义一个地图对象
          * */
@@ -244,7 +244,7 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
                          * */
                         self.map = new ol.Map({
                             target: mapDiv,
-                            interactions: ol.interaction.defaults({doubleClickZoom: false}).extend([new app.Drag()]),
+                            interactions: ol.interaction.defaults({doubleClickZoom: false}).extend([]),
                             controls: [new ol.control.ScaleLine({//Controls initially added to the map. If not specified, ol.control.defaults() is used.
                                 target: "hdscalebar"
                             }), new ol.control.Loading()],
@@ -2390,18 +2390,9 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
                     var layer = this.tempVectorLayer;
                 }
                 var Polygonstyle = new ol.style.Style({
-                    fill: new ol.style.Fill({
-                        color: 'rgba(255, 255, 255, 0)'
-                    }),
                     stroke: new ol.style.Stroke({
                         color: '#4781d9',
                         width: 2
-                    }),
-                    image: new ol.style.Circle({
-                        radius: 7,
-                        fill: new ol.style.Fill({
-                            color: '#ffcc33'
-                        })
                     })
                 });
                 var geometry = new ol.format.WKT().readGeometry(feature.geometry);
