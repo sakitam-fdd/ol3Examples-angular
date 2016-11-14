@@ -1621,8 +1621,8 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
         var center = ol.extent.getCenter(extent);
         if (!isanimation) {
           view.fit(extent, size, {
-            padding: [10, 10, 10, 10],
-            nearest: true
+            padding: [0,0,0,0],
+            nearest: false
           });
           view.setCenter(center);
 
@@ -1643,8 +1643,8 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
             this.map.beforeRender(pan);
             view.setCenter(center);
             view.fit(extent, size, {
-              padding: [10,10,10,10],
-              nearest: true
+              padding: [0,0,0,0],
+              nearest: false
             });
           }
         }
@@ -2381,6 +2381,12 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
           elelment.style.cursor = this.cursor_;
         }
       };
+      /**
+       * 添加行政区划
+       * @param feature
+       * @param params
+       * @param isclear
+       */
       this.addCode = function (feature, params, isclear) {
         if (isclear) {
           this.clearGraphics_();
@@ -2408,8 +2414,58 @@ define(['ol', 'truf', 'proj4', 'mappopup', 'util', 'echarts', 'config'],
         Polygonfeature.setStyle(Polygonstyle);
         layer.getSource().addFeature(Polygonfeature);
         var extent = geometry.getExtent();
-        this.zoomToExtent(extent, true);
-      }
+        this.zoomToExtent_(extent, true);
+      };
+      /*
+       *@param{ol.Extent} extent缩放到的范围
+       *@param{bool} isanimation是否使用动画
+       *@param{number} duration可选的动画时常
+       * */
+      this.zoomToExtent_ = function (extent, isanimation, duration) {
+        var view = this.map.getView();
+        var size = this.map.getSize();
+        /**
+         *  @type {ol.Coordinate} center The center of the view.
+         */
+        var center = ol.extent.getCenter(extent);
+        if (!isanimation) {
+          view.fit(extent, size, {
+            padding: [0,0,0,0],
+            nearest: false
+          });
+          view.setCenter(center);
+
+        } else {
+          if (!duration) {
+            duration = 1000;
+            var start = +new Date();
+            var pan = ol.animation.pan({
+              duration: duration,
+              source: /** @type {ol.Coordinate} */ (view.getCenter()),
+              start: start
+            });
+            var bounce = ol.animation.bounce({
+              duration: duration,
+              resolution: view.getResolution(),
+              start: start
+            });
+            this.map.beforeRender(pan);
+            view.setCenter(center);
+            view.fit(extent, size, {
+              padding: [0,0,0,0],
+              nearest: false
+            });
+            console.log();
+            view.on("change:resolution",function (ev) {
+              console.log(view.getZoom());
+            });
+            var timer = setTimeout(function () {
+              view.set('minZoom',view.getZoom());
+              clearTimeout(timer);
+            },500)
+          }
+        }
+      };
     };
     return {
       HDMap: HDMap
