@@ -1,57 +1,45 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');//合并文件
-var rename = require('gulp-rename');//重命名
-var minifyCss = require('gulp-minify-css');//- 压缩CSS；
-var sass = require('gulp-ruby-sass');			//编译scss
-var mainBowerFiles = require('main-bower-files');
-
+var concat = require('gulp-concat');                   // 合并文件
+var rename = require('gulp-rename');                   // 重命名
+var minifyCss = require('gulp-minify-css');            // 压缩CSS；
+var sass = require('gulp-ruby-sass');			             // 编译scss
+var changed = require('gulp-changed');
 var watch = require('gulp-watch');
-var browserSync  = require('browser-sync');
+var browserSync = require('browser-sync');
 
 var src = {
-    scss: './scss/*.scss',
-    css:  './dist/css/',
-    html: './tpl/*.html'
+  scss: './scss/*.scss',
+  css: './css/',
+  compressCss: './css/*.css',
+  minCss: './dist/css/',
+  html: './src/app/tpl/*.html'
 };
 
 // sass任务
-gulp.task('sass', function() {
-    return sass('scss/*.scss', { style: 'expanded', noCache: true })
-        .pipe(gulp.dest('dist/css/'))
+gulp.task('sass', function () {
+  return sass(src.scss, {style: 'expanded', noCache: true})
+    .pipe(gulp.dest(src.css))
+    .pipe(changed(src.scss))
 });
+
 
 //合并压缩css
-gulp.task('minifyCss', ['sass'], function(){
-    return gulp.src('dist/css/*.css')		//监听对象文件
-        .pipe(concat('main.all.css'))			//指定合并后的文件名
-        .pipe(gulp.dest('dist/css/min/'))		//指定合并后生成文件的输出目录
-        .pipe(minifyCss())					//执行压缩
-        .pipe(rename('main.min.css'))		//压缩后的文件名
-        .pipe(gulp.dest('dist/css/min/'));		//压缩后生成文件的输出目录
+gulp.task('minifyCss', ['sass'], function () {
+  return gulp.src(src.compressCss)		    //监听对象文件
+    .pipe(concat('main.all.css'))			//指定合并后的文件名
+    .pipe(gulp.dest(src.minCss))		//指定合并后生成文件的输出目录
+    .pipe(minifyCss())					//执行压缩
+    .pipe(rename('main.min.css'))		//压缩后的文件名
+    .pipe(gulp.dest(src.minCss));		//压缩后生成文件的输出目录
 });
 
-/**
- * Start the Browsersync Static Server + Watch files
- */
-gulp.task('server', ['minifyCss'], function() {
-    browserSync({
-        server: {
-            baseDir: "./",
-            index: "index.html"
-        }
-    });
+gulp.task('server', ['minifyCss'], function () {
+  browserSync({
+    server: "./"
+  });
 
-    gulp.watch(src.scss, ['minifyCss'], browserSync.reload);
-    gulp.watch(src.html).on('change', browserSync.reload);
+  gulp.watch(src.scss, ['minifyCss']);
 });
 
-// 获取 bower main 文件
-gulp.task('bower', function () {
-    gulp.src(mainBowerFiles())
-        // 重新设置目录结构
-        .pipe(rename({dirname: ''}))
-        // 另存
-        .pipe(gulp.dest('public'));
+gulp.task('default', ['sass', 'minifyCss'], function () {
 });
-
-gulp.task('default', ['server'], function () {});

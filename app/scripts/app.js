@@ -22,7 +22,7 @@ require.config({
     'index': 'index',
 
     //map
-    'HDMap': 'map/hdmap',
+    'HDMap': 'map/map',
     'truf': '../public/map/truf',
     'proj4': '../public/map/proj4',
     'p-ol3': '../public/map/p-ol3.min',

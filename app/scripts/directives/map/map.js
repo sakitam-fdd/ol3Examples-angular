@@ -3,7 +3,7 @@
  */
 'use strict';
 define(['index','HDMap','config','mapService'],
-  function (index,HDMap) {
+  function (index,HDMap,config) {
     index.directive('map', ['mapService',function (mapService) {
       return {
         restrict: 'EA',
@@ -15,7 +15,8 @@ define(['index','HDMap','config','mapService'],
           $scope.init = function(){
             //初始化地图
             var hdmap = new HDMap.HDMap();
-            hdmap.initHDMap("map");
+            config.hdmap = hdmap;
+            hdmap.getMapParams("map",config.layerConfig.baseLayers[0].layerUrl);
             $('#mapBox').css('width', window.innerWidth - 310 + 'px');
             $(window).resizeend({
               delay: 50
